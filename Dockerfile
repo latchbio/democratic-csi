@@ -99,8 +99,8 @@ RUN chmod +x /usr/local/sbin/kopia-installer.sh && kopia-installer.sh
 
 # install objectivefs
 ARG OBJECTIVEFS_VERSION=7.2
-ADD docker/objectivefs-installer.sh /usr/local/sbin
-RUN chmod +x /usr/local/sbin/objectivefs-installer.sh && objectivefs-installer.sh
+COPY docker/mount.objectivefs /sbin/mount.objectivefs
+RUN chmod +x /sbin/mount.objectivefs
 
 # install wrappers
 ADD docker/iscsiadm /usr/local/sbin
