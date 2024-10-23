@@ -117,6 +117,9 @@ RUN chmod +x /usr/local/bin/mount
 ADD docker/umount /usr/local/bin/umount
 RUN chmod +x /usr/local/bin/umount
 
+ADD docker/patch_cgroup.sh /usr/local/sbin/patch_cgroup.sh
+RUN chmod +x /usr/local/sbin/patch_cgroup.sh
+
 ADD docker/zfs /usr/local/bin/zfs
 RUN chmod +x /usr/local/bin/zfs
 ADD docker/zpool /usr/local/bin/zpool
